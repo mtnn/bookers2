@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>User info</h2>
+
+      <%= form_with model:@user, local:true do |f| %>
+        <div class="inputName">
+      	  <h6>Name</h6>
+      	  <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"name" %>
+      	</div>
+      	<div class="inputImage">
+          <h6>Image</h6>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+        </div>
+        <div class="inputIntroduction">
+          <%= f.text_area :introduction, id:"inputIntroduction" %>
+        </div>
+        <%= f.submit "Update User" %>
+      <% end %>
+    </div>
+  </div>
+</div>
